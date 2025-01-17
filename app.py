@@ -12,10 +12,10 @@ from aiogram import Bot
 import asyncio
 """
 Hello our dear coder!
-This code was writen by e-sense dev team:
+This code was written by the e-sense dev team:
   Arkat our computer vision engineer,
   Eraly our ML/Backend engineer.
-We hope you will use this app only for control kids)
+We hope you will only use this app to control kids.
 """
 
 
