@@ -20,7 +20,7 @@ We hope you will only use this app to control kids.
 
 
 
-# Список нецензурных слов
+# Список нецензурных слов для обнаружения 
 bad_words = [
     'дурак', 'идиот', 'тупой', 'мразь', 'глупый', 'сволочь',
     'ублюдок', 'негодяй', 'козел', 'долбоеб', 'пидорас', 'сучонок', 'чорт', 'хуй', 'в пизду', 'твою мать', 'сука', 'в жопу', 'кал лошадиный', 'говно вонючее',
@@ -28,7 +28,7 @@ bad_words = [
     'минеты делать', 'узкоглазая шлюха', 'малолетка недоёбанная', 'малолетка', 'я хуею', 'затычка в жопе'
 ]
 
-# Создание базы данных SQLite
+# SQLite база данных)
 def create_database():
     conn = sqlite3.connect("parental_control.db")
     cursor = conn.cursor()
@@ -65,13 +65,13 @@ def register_user(name, phone, tg_id):
     conn.commit()
     conn.close()
 
-# Отправка сообщений в Telegram
+# Отправка сообщений в Telegram с ботом 
 async def send_telegram_message(tg_id, message):
-    bot = Bot(token="YOUR_BOT_TOKEN")  # Замените на ваш токен
+    bot = Bot(token="YOUR_BOT_TOKEN")  # Вы можете заменить на свой токен или использовать .env
     await bot.send_message(tg_id, message)
     await bot.close()
 
-# Сохранение отчетов
+# Функция для сохранения 
 def save_report(user_id, emotion=None, bad_word=None):
     conn = sqlite3.connect("parental_control.db")
     cursor = conn.cursor()
@@ -81,7 +81,7 @@ def save_report(user_id, emotion=None, bad_word=None):
     conn.commit()
     conn.close()
 
-# Анализ эмоций
+# Главная функция 
 def detect_emotion(user_id, tg_id):
     cap = cv2.VideoCapture(0)
     while True:
@@ -101,7 +101,7 @@ def detect_emotion(user_id, tg_id):
     cap.release()
     cv2.destroyAllWindows()
 
-# Обнаружение нецензурной лексики
+# Обнаружение нецензурной лексики BAD_WORDS
 def listen_and_detect(user_id, tg_id):
     recognizer = sr.Recognizer()
     microphone = sr.Microphone()
@@ -121,7 +121,7 @@ def listen_and_detect(user_id, tg_id):
             except sr.RequestError as e:
                 print(f"Google Speech Recognition error: {e}")
 
-# Переводы
+# Языки/Тілдер
 translations = {
     'en': {
         'phone_number': "Enter phone number:",
@@ -165,7 +165,7 @@ translations = {
 class MainApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.current_language = 'en'  # Язык по умолчанию
+        self.current_language = 'en'  # Язык по умолчанию человек может выбрать язые
         self.initUI()
 
     def initUI(self):
@@ -292,7 +292,7 @@ class MainApp(QWidget):
     def start_monitoring(self):
         name = "User"  # Замените на ввод имени пользователя
         phone = self.phone_input.text()
-        tg_id = "USER_TG_ID"  # Замените на ввод Telegram ID
+        tg_id = "USER_TG_ID"  # Замените на ввод Telegram ID или как я уже написал на .env
 
         if phone and tg_id:
             register_user(name, phone, tg_id)
