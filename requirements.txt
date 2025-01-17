@@ -1,0 +1,9 @@
+sys
+sqlite3
+threading
+cv2
+speech_recognition
+deepface
+PyQt5
+aiogram
+asyncio
