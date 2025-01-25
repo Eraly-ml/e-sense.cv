@@ -1,18 +1,17 @@
 # E-Sense
 
-## Описание
-E-Sense — это приложение и Telegram-бот, созданные для помощи родителям в мониторинге эмоционального состояния их детей. Оно использует технологии анализа эмоций через доступ к камере устройства ребёнка. Если ребёнок испытывает гнев, приложение отправляет уведомление родителям в Telegram-бот.
+## Description
+E-Sense is an app and Telegram bot designed to help parents monitor their children's emotional state. It uses technologies to analyze emotions through access to the child's device camera. If the child is angry, the app sends a notification to the parents in the Telegram bot.
 
-## Основные функции
-- **Анализ эмоций в реальном времени:** приложение распознаёт эмоции ребёнка с помощью камеры.
-- **Уведомления для родителей:** при обнаружении признаков гнева приложение отправляет сигнал в Telegram-бот родителя.
-- **Безопасность и конфиденциальность:** все данные обрабатываются локально или надёжно шифруются при передаче.
+## Main Features
+- **Real-time emotion analysis:** The app recognizes the child's emotions using the camera.
+- **Notifications for parents:** if the app detects signs of anger, it sends a signal to the parent's Telegram bot.
+- **Security and Privacy:** All data is processed locally or securely encrypted during transmission.
 
-## Технологии
-- Обработка изображений: TensorFlow/Keras.
-- Распознавание эмоций: нейронные сети для анализа выражений лица.
-- Интеграция с Telegram API для отправки уведомлений.
+## Technologies
+- Emotion recognition: neural networks for analyzing facial expressions.
+- Integration with the Telegram API for sending notifications.
 
-## Контакты
-Если у вас есть вопросы или предложения, напишите нам наш инстаграм emotion_sense.team
+## Contacts
+If you have any questions or suggestions, please write to us on our instagram emotion_sense. team
 
